@@ -54,7 +54,7 @@ return {
         command = "gdb",
         args = { "-i", "dap" },
       }
-      
+
       dap.configurations.c = {
         {
           name = "Launch",
@@ -66,12 +66,12 @@ return {
           cwd = "${workspaceFolder}",
         },
       }
-      
+
       -- Auto-open UI when debugging starts
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
       end
-      
+
       -- Auto-close UI when debugging ends
       dap.listeners.before.event_terminated["dapui_config"] = function()
         dapui.close()
