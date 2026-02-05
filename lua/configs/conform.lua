@@ -15,6 +15,7 @@ local options = {
     markdown = { "prettierd" },
     graphql = { "prettierd" },
     c = { "clang-format" },
+    py = { "ruff" },
   },
 
   format_on_save = {
