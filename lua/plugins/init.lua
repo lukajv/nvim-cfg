@@ -45,14 +45,14 @@ return {
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
-      
+
       dapui.setup()
-      
+
       -- GDB configuration for C
       dap.adapters.gdb = {
         type = "executable",
         command = "gdb",
-        args = { "-i", "dap" }
+        args = { "-i", "dap" },
       }
       
       dap.configurations.c = {
