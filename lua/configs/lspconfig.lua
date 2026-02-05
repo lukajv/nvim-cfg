@@ -4,6 +4,7 @@ local servers = {
   html = {},
   cssls = {},
   pyright = {},
+  ruff = {},
   clangd = {},
 }
 
