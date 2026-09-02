@@ -37,14 +37,31 @@ return {
     end,
   },
   {
+    "anurag3301/nvim-platformio.lua",
+
+    cmd = { "Pioinit", "Piorun", "Piocmdh", "Piocmdf", "Piolib", "Piomon", "Piodebug", "Piodb" },
+
+    -- Dependencies are lazy-loaded by default unless specified otherwise.
+    dependencies = {
+      { "nvim-telescope/telescope.nvim" },
+      { "nvim-telescope/telescope-ui-select.nvim" },
+      { "nvim-lua/plenary.nvim" },
+      { "folke/which-key.nvim" },
+      { "nvim-treesitter/nvim-treesitter" },
+
+      -- install picker based on your likeing
+      { "akinsho/toggleterm.nvim" },
+    },
+  },
+  {
     "mfussenegger/nvim-dap",
     dependencies = {
       "rcarriga/nvim-dap-ui",
       "nvim-neotest/nvim-nio",
     },
     config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
+      local dap = require "dap"
+      local dapui = require "dapui"
 
       dapui.setup()
 
@@ -61,7 +78,7 @@ return {
           type = "gdb",
           request = "launch",
           program = function()
-            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
           end,
           cwd = "${workspaceFolder}",
         },
